@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import TabBars from './components/TabBars';
+import styles from './index.module.css';
+import Home from './components/Home';
+import PersonalCenter from './components/PersonalCenter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <div className={styles.header}></div>
+      <div className={styles.body}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/personalcenter" element={<PersonalCenter />} />
+        </Routes>
+      </div>
+      <div className={styles.footer}>
+          <TabBars />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,80 @@
+.nft_item{
+    width: 100%;
+    padding: 0;
+    background: #2C2C2E;
+    border-radius: 24px;
+}
+.nft_name{
+    width: 96px;
+    height: 26px;
+    font-size: 16px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 26px;
+}
+.nft_pic{
+    width: 100%;
+    border-radius: 24px;
+}
+.adm-card-body{
+    padding: 0;
+}
+.nft_info{
+    width: 92px;
+    height: 18px;
+    border-radius: 2px;
+    padding-left: 16px;
+}
+.nft_desc{
+    width: 36px;
+    height: 18px;
+    font-size: 10px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    line-height: 14px;
+    font-style: normal;
+    background: #F0E0B7;
+    border-radius: 2px 0px 0px 2px;
+}
+.nft_nums{
+    width: 56px;
+    height: 18px;
+    font-size: 10px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #F0E0B7;
+    font-style: normal;
+    background-color: #4B4B4D;
+}
+.nft_author{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    padding-left: 16px;
+}
+.nft_avatar{
+    width: 13px;
+    height: 13px;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.nft_authName{
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 18px;
+}
+.nft_price{
+    width: 91px;
+    height: 28px;
+    font-size: 20px;
+    font-family: DIN-Bold, DIN;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 24px;
+    margin-left: auto;
+}

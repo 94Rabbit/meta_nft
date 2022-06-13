@@ -1,0 +1,17 @@
+.banner{
+}
+.banner_item{
+    width: 100%;
+    height: 114px;
+    background: #D9D5C2;
+    border-radius: 16px;
+}
+.banner_box {
+    height: 114px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    user-select: none;
+}
