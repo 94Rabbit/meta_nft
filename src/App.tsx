@@ -4,6 +4,7 @@ import TabBars from './components/TabBars';
 import styles from './index.module.css';
 import Home from './components/Home';
 import PersonalCenter from './components/PersonalCenter';
+import { SafeArea } from 'antd-mobile'
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </div>
       <div className={styles.footer}>
           <TabBars />
+          <div style={{ background: '#ffcfac' }}>
+            <SafeArea position='bottom' />
+          </div>
       </div>
     </div>
   );
