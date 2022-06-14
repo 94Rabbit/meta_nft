@@ -26,12 +26,13 @@ function TabBars() {
   const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = location;
+  console.log(pathname);
   const setRouteActive = (value: string) => {
     navigate(value);
   }
   return (
     <>
-      <TabBar activeKey={pathname} onChange={value => setRouteActive(value)}>
+      <TabBar activeKey={pathname === '/' ? '/home' : pathname } onChange={value => setRouteActive(value)}>
         {tabs.map(item => (
           <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
         ))}

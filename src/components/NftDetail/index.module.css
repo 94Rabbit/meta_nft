@@ -1,0 +1,87 @@
+.nft_detail{
+
+}
+.nft_pic{
+    width: 226px;
+    display: block;
+    margin: auto;
+}
+.nft_wutai{
+    width: 281px;
+    height: 58px;
+    margin: auto;
+    background: linear-gradient(180deg, #3F3F41 0%, #505050 100%);
+    box-shadow: inset 0px -3px 7px 0px rgba(255, 255, 255, 0.17);
+}
+.nft_bottom{
+    margin: auto;
+    width: 281px;
+    height: 64px;
+    background: linear-gradient(180deg, rgba(238, 238, 238, 0.2) 0%, rgba(216, 216, 216, 0) 100%);
+}
+.nft_name{
+    height: 27px;
+    font-size: 20px;
+    font-family: AlibabaPuHuiTiM;
+    color: #FFFFFF;
+    line-height: 27px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nft_author{
+    height: 64px;
+    background: #191919;
+    border-radius: 8px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.nft_avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 12px;
+}
+.nft_profile{
+    /* display: flex */
+}
+.author_name{
+    width: 84px;
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 20px;
+}
+.nft_creator{
+    width: 36px;
+    height: 17px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #999;
+    line-height: 17px;
+}
+.nft_Issuer{
+    background: #191919;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.nft_title{
+    width: 72px;
+    height: 25px;
+    font-size: 18px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 25px;
+}
+.nft_img{
+    display: block;
+}

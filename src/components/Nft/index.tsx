@@ -2,12 +2,16 @@ import React from 'react';
 import { Space } from 'antd-mobile'
 import styles from './index.module.css';
 import { Card, Image, Avatar } from 'antd-mobile'
+import { useNavigate } from 'react-router-dom'
 let url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
-let avaUrl = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
 function Ntf() {
+    const navigate = useNavigate();
+    const goNftDetail = ()=> {
+        navigate('/detail');
+    }
     return (
         <>
-            <Card className={styles.nft_item}>
+            <Card className={styles.nft_item} onClick={goNftDetail}>
                 <Image src={url} className={styles.nft_pic}/>
                 <p className={styles.nft_name}>《啥都没有》</p>
                 <div className={styles.nft_info}>
