@@ -2,8 +2,8 @@ import React from 'react';
 import { Space } from 'antd-mobile'
 import styles from './index.module.css';
 import { Card, Image, Avatar } from 'antd-mobile'
-let url = `https://image.shutterstock.com/image-vector/actually-he-would-really-laugh-600w-2102441059.jpg`;
-let avaUrl = `https://image.shutterstock.com/image-vector/actually-he-would-really-laugh-600w-2102441059.jpg`;
+let url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
+let avaUrl = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
 function Ntf() {
     return (
         <>

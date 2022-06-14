@@ -9,11 +9,11 @@ import { Image, Swiper, Toast } from 'antd-mobile'
 const bannerList = [
   {
     id: 1,
-    picUrl: `https://image.shutterstock.com/image-vector/nft-token-crypto-artwork-banner-600w-2087482288.jpg`
+    picUrl: `https://cdn.pixabay.com/photo/2022/02/10/09/39/nft-7004985__340.jpg`
   },
   {
     id: 2,
-    picUrl: `https://image.shutterstock.com/image-vector/nft-theme-design-cryptographic-art-600w-2108203079.jpg`
+    picUrl: `https://cdn.pixabay.com/photo/2022/03/01/02/51/galaxy-7040416__480.png`
   }
 ]
 
