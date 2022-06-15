@@ -21,7 +21,7 @@ function App() {
       </div>
       <div className={styles.footer}>
           <TabBars />
-          <div style={{ background: '#ffcfac' }}>
+          <div style={{ background: '#272727' }}>
             <SafeArea position='bottom' />
           </div>
       </div>
