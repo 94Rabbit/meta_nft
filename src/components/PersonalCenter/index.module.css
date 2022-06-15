@@ -1,6 +1,7 @@
 .personal{
     width: 343px;
     margin: auto;
+    padding: 16px;
 }
 .personal_header{
     display: flex;

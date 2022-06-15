@@ -2,6 +2,7 @@ import React from 'react';
 import { NavBar, Space, Toast, Image } from 'antd-mobile'
 import styles from './index.module.css';
 import { useNavigate } from 'react-router-dom'
+import wutai from '../../assets/wutai.png';
 
 const url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
 function NftDetail() {
@@ -13,6 +14,9 @@ function NftDetail() {
                 <NavBar onBack={back}></NavBar>
                 <Image src={url} className={styles.nft_pic}/>
                 {/* <div className={styles.nft_wutai}></div> */}
+                <div className={styles.nft_wutai}>
+                    <Image src={wutai} />
+                </div>
                 <p className={styles.nft_name}>隔壁二愣子楼下挖的盆子</p>
                 {/* <div className={styles}>
                     重磅
