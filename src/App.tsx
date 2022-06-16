@@ -5,6 +5,7 @@ import styles from './index.module.css';
 import Home from './components/Home';
 import PersonalCenter from './components/PersonalCenter';
 import NftDetail from './components/NftDetail';
+import Login from './components/Login';
 import { SafeArea } from 'antd-mobile'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/personalcenter" element={<PersonalCenter />} />
           <Route path="/detail" element={<NftDetail />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
       <div className={styles.footer}>

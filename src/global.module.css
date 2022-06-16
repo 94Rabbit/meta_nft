@@ -11,3 +11,23 @@
 :global(.adm-tab-bar-item-active){
     color: #fff;
 }
+:global(.adm-input-element){
+    color: #fff;
+    /* padding-bottom: 10px; */
+    font-size: 18px;
+    font-family: DIN-Medium, DIN;
+    font-weight: 500;
+}
+:global(.adm-input-element::placeholder){
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #AAAAAA;
+}
+:global(.adm-radio-icon){
+    width: 10px;
+}
+:global(.sliderContainer){
+    margin-top: 0;
+    border: 1px solid red;
+}

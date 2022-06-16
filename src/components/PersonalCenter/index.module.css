@@ -85,6 +85,7 @@
     border-radius: 12px;
     margin: auto;
     margin-bottom: 16px;
+
 }
 .setting_item{
     display: flex;
@@ -116,4 +117,38 @@
     padding-right: 32px;
     background: #2C2C2E;
     border-radius: 12px;
+    margin-bottom: 72px;
+}
+.login_status{
+    width: 343px;
+    height: 52px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.login_note{
+    font-size: 14px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-right: 24px;
+}
+.login_btn{
+    width: 64px;
+    height: 30px;
+    background: #F0E0B7;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.login_close{
+    margin-left: auto;
 }

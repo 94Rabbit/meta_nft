@@ -1,0 +1,84 @@
+.login_container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: #0F0F0F;
+    z-index:100;
+    position: relative;
+    padding-top: 160px;
+    box-sizing: border-box;
+}
+.login_close{
+    position: absolute;
+    left: 20px;
+    font-weight: 400;
+    top: env(safe-area-inset-top);
+    top: constant(safe-area-inset-top);
+    top: 40px;
+}
+.login_label{
+    margin: 0;
+    font-size: 22px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+}
+.login_form{
+    width: 283px;
+}
+.login_input{
+    border-bottom: 1px solid #AAA;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.login_tip{
+    display: block;
+    font-size: 10px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #AAAAAA;
+    line-height: 14px;
+    margin-bottom: 40px;
+}
+.login_protcol{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.login_check{
+    /* width: 10px;
+    height: 10px; */
+    margin-right: 4px;
+}
+.login_article{
+    font-size: 10px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #AAAAAA;
+    line-height: 14px;
+}
+.login_qrcode{
+    width: 283px;
+    height: 44px;
+    background: #F0E0B7;
+    border-radius: 23px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.qrcode_vertify{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 220px;
+    background: #fff;
+    margin: auto;
+}
