@@ -19,7 +19,7 @@ import setting from '../../assets/setting.png';
 import collect from '../../assets/collect.png';
 import UserModel from "../../models/User/UserModel";
 
-let url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
+let url = `https://static.ibox.art/file/oss/test/image/nft-goods/60811c1fdcbd46818c71f11bbe9ccbcd.png`;
 function PersonalCenter() {
     const { user, login} = UserModel();
     const [ show, setShow ] = useState(true);

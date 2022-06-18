@@ -3,6 +3,8 @@ import { NavBar, Space, Toast, Image } from 'antd-mobile'
 import styles from './index.module.css';
 import { useNavigate, useLocation, useSearchParams, useParams } from 'react-router-dom'
 import wutai from '../../assets/wutai.png';
+import desc from '../../assets/desc.png';
+
 import { NFTLIST } from '../../mock';
 interface INft{
     id: number
@@ -10,7 +12,7 @@ interface INft{
     name: string
     price: number
 }
-const url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
+const url = `https://static.ibox.art/file/oss/test/image/nft-goods/60811c1fdcbd46818c71f11bbe9ccbcd.png`;
 function NftDetail() {
     const [search, setSearch] = useSearchParams();
     const id = search.get("id");
@@ -50,10 +52,9 @@ function NftDetail() {
                 </div>
                 <div className={styles.nft_Issuer}>
                     <h1 className={styles.nft_title}>藏品介绍</h1>
-                    <Image src={url} className={styles.nft_img}/>
-                    <Image src={url} className={styles.nft_img}/>
-                    <Image src={url} className={styles.nft_img}/>
-                    <Image src={url} className={styles.nft_img}/>
+                    <Image src={desc} className={styles.nft_img}/>
+                    <Image src={desc} className={styles.nft_img}/>
+                    <Image src={desc} className={styles.nft_img}/>
                 </div>
             </div>
         </>
