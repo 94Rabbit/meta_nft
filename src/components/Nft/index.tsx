@@ -16,12 +16,12 @@ interface INft{
 function Ntf(props:{item: INft}) {
     const { item } = props;
     const navigate = useNavigate();
-    const goNftDetail = ()=> {
-        navigate('/detail');
+    const goNftDetail = (item:INft)=> {
+        navigate(`/detail?id=${item.id}`);
     }
     return (
         <>
-            <Card className={styles.nft_item} onClick={goNftDetail}>
+            <Card className={styles.nft_item} onClick={()=> goNftDetail(item)}>
                 <div className={styles.nft_pic}>
                     <Image src={item.picUrl} className={styles.hot_img}/>
                     <div className={styles.hot_block}>
