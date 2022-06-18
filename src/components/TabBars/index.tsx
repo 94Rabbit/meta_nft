@@ -3,7 +3,9 @@ import { Badge, TabBar } from 'antd-mobile'
 import {
     AppOutline,
     UserOutline,
+    ShopbagOutline
 } from 'antd-mobile-icons'
+
 import {
   useNavigate,
   useLocation,
@@ -18,10 +20,16 @@ function TabBars() {
         badge: Badge.dot,
       },
       {
+        key: '/blindgift',
+        title: '盲盒',
+        icon: <ShopbagOutline />,
+      },
+      {
         key: '/personalcenter',
         title: '个人中心',
         icon: <UserOutline />,
       },
+   
   ]
   const navigate = useNavigate();
   const location = useLocation();

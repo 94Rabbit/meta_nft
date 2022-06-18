@@ -13,7 +13,6 @@
 }
 :global(.adm-input-element){
     color: #fff;
-    /* padding-bottom: 10px; */
     font-size: 18px;
     font-family: DIN-Medium, DIN;
     font-weight: 500;
@@ -30,4 +29,8 @@
 :global(.sliderContainer){
     margin-top: 0;
     border: 1px solid red;
+}
+:global(.adm-search-bar-active){
+    outline: none;
+    border: none;
 }

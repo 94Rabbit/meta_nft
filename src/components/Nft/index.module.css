@@ -1,10 +1,11 @@
 .nft_item{
-    width: 100%;
+    /* width: 100%; */
     padding: 0;
     background: #2C2C2E;
     border-radius: 24px;
     margin-bottom: 15px;
     padding-bottom: 10px;
+    width: 166px;
 }
 .nft_name{
     width: 96px;
@@ -13,17 +14,58 @@
     font-family: PingFang-SC-Medium, PingFang-SC;
     font-weight: 500;
     color: #FFFFFF;
-    line-height: 26px;
+    padding-left: 10px;
+    margin: 0;
+    margin-bottom: 10px;
 }
 .nft_pic{
     width: 100%;
-    border-radius: 24px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 16px;
+}
+.hot_block{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    height: 26px;
+    width: 147px;
+    background: #141414;
+    border-radius: 13px;
+    margin: auto;
+}
+.hot_img{
+    margin-right: 4px;
+    display: block;
+    width: 100%;
+}
+.hot_label{
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #F0E0B7;
+    line-height: 18px;
+    margin-right: 4px;
+}
+.hot_time{
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #F0E0B7;
 }
 .adm-card-body{
     padding: 0;
 }
 .nft_info{
-    width: 92px;
+    width: 69px;
     height: 18px;
     border-radius: 2px;
     padding-left: 16px;
@@ -31,7 +73,6 @@
     flex-direction: row;
     align-items: center;
     justify-items: center;
-    margin-bottom: 7px;
 }
 .nft_desc{
     width: 36px;
@@ -40,7 +81,6 @@
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #333333;
-    line-height: 14px;
     font-style: normal;
     background: #F0E0B7;
     border-radius: 2px 0px 0px 2px;
@@ -67,6 +107,7 @@
     justify-items: center;
     align-items: center;
     padding-left: 16px;
+    margin-bottom: 10px;
 }
 .nft_avatar{
     width: 13px;
@@ -80,15 +121,14 @@
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #FFFFFF;
-    line-height: 18px;
+  
 }
 .nft_price{
-    width: 91px;
-    height: 28px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: DIN-Bold, DIN;
     font-weight: bold;
     color: #FFFFFF;
-    line-height: 24px;
-    margin-left: auto;
+    padding-left: 10px;
+    margin: 0;
+    margin-bottom: 13px;
 }
