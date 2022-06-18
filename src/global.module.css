@@ -30,7 +30,10 @@
     margin-top: 0;
     border: 1px solid red;
 }
-:global(.adm-search-bar-active){
+:global(.adm-search-bar-active .adm-search-bar-input-box){
     outline: none;
-    border: none;
+    border:  1px solid transparent;
+}
+:global(.adm-search-bar-input-box .adm-input-element){
+    color: #272727;
 }

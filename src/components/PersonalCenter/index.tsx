@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import {
     RightOutline,
     // EditSOutline,
-    CloseOutline
+    CloseOutline,
+    UserOutline
   } from 'antd-mobile-icons'
 import message from '../../assets/message.png';
 import order from '../../assets/order.png';
@@ -33,7 +34,13 @@ function PersonalCenter() {
         <>
             <div className={styles.personal}>
                 <div className={styles.personal_header}>
-                    <Image src={url} className={styles.personal_avatar}/>
+                    <div className={styles.personal_avatar}>
+                        {
+                            user  
+                                ? <Image src={url} className={styles.personal_pic}/>
+                                : <UserOutline color={`#4C3929`} fontSize={24}/>
+                        }
+                    </div>
                     <div className={styles.personal_info}>
                         <p className={styles.personal_name} onClick={()=> { if(!user){goLoginForm()}}}> { user ? '西瓜不是瓜' : '未登录' } </p>
                         <p className={styles.personal_phone}>{user ? '130****4987' : '登录后可以查看你的数字藏品'}</p>

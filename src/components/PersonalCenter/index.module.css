@@ -14,6 +14,17 @@
     height: 66px;
     border-radius: 33px;
     margin-right: 12px;
+    background: #F0E0B7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.personal_pic{
+    width: 66px;
+    height: 66px;
+    border-radius: 33px;
 }
 .personal_name{
     font-size: 18px;

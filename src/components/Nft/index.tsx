@@ -6,7 +6,15 @@ import { useNavigate } from 'react-router-dom'
 import clock from '../../assets/clock.png';
 
 let url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
-function Ntf() {
+
+interface INft{
+    id: number
+    picUrl: string
+    name: string
+    price: number
+}
+function Ntf(props:{item: INft}) {
+    const { item } = props;
     const navigate = useNavigate();
     const goNftDetail = ()=> {
         navigate('/detail');
@@ -15,7 +23,7 @@ function Ntf() {
         <>
             <Card className={styles.nft_item} onClick={goNftDetail}>
                 <div className={styles.nft_pic}>
-                    <Image src={url} className={styles.hot_img}/>
+                    <Image src={item.picUrl} className={styles.hot_img}/>
                     <div className={styles.hot_block}>
                         <Image src={clock} />
                         <span className={styles.hot_label}>
@@ -27,8 +35,8 @@ function Ntf() {
                     </div>
                 </div>
               
-                <p className={styles.nft_name}>《啥都没有》</p>
-                <p className={styles.nft_price}>￥1888.00</p>
+                <p className={styles.nft_name}>{item.name}</p>
+                <p className={styles.nft_price}>￥{item.price}</p>
                 <div className={styles.nft_author}>
                     <Avatar src={url} className={styles.nft_avatar}/>
                     <span className={styles.nft_authName}>大西瓜</span>
