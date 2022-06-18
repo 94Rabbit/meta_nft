@@ -14,6 +14,10 @@ const bannerList = [
   {
     id: 2,
     picUrl: `https://cdn.pixabay.com/photo/2022/03/01/02/51/galaxy-7040416__480.png`
+  },
+  {
+    id: 3,
+    picUrl: `https://static.ibox.art/file/oss/test/image/nft-goods/39c1d687c0be43f68aa7134f7d04a07a.png?style=st6`
   }
 ]
 
