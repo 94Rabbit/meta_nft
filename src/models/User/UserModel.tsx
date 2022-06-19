@@ -2,8 +2,8 @@ import React, { useState }from 'react'
 import { createModel } from 'hox';
 
 function UserModel() {
-  const [user, setUser] = useState('');
-  const login = () => setUser('admin');
+  const [user, setUser] = useState<any>();
+  const login = (data:any) => setUser(data);
   const logOut = () => setUser('');
   return {
     user,

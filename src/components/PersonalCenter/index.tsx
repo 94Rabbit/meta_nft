@@ -19,16 +19,14 @@ import setting from '../../assets/setting.png';
 import collect from '../../assets/collect.png';
 import UserModel from "../../models/User/UserModel";
 
+
 let url = `https://static.ibox.art/file/oss/test/image/nft-goods/60811c1fdcbd46818c71f11bbe9ccbcd.png`;
 function PersonalCenter() {
-    const { user, login} = UserModel();
+    const { user } = UserModel();
     const [ show, setShow ] = useState(true);
     const navigate = useNavigate();
     const goLoginForm = ()=> {
         navigate('/login');
-    }
-    const handleLogin = ()=> {
-        login();
     }
     return (
         <>
@@ -42,8 +40,8 @@ function PersonalCenter() {
                         }
                     </div>
                     <div className={styles.personal_info}>
-                        <p className={styles.personal_name} onClick={()=> { if(!user){goLoginForm()}}}> { user ? '西瓜不是瓜' : '未登录' } </p>
-                        <p className={styles.personal_phone}>{user ? '130****4987' : '登录后可以查看你的数字藏品'}</p>
+                        <p className={styles.personal_name} onClick={()=> { if(!user){goLoginForm()}}}> { user ? user.name : '未登录' } </p>
+                        <p className={styles.personal_phone}>{user ? user.tel : '登录后可以查看你的数字藏品'}</p>
                     </div>
                     {
                         user && <Button className={styles.personal_profile}>个人主页</Button>

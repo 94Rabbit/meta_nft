@@ -37,3 +37,7 @@
 :global(.adm-search-bar-input-box .adm-input-element){
     color: #272727;
 }
+:global(.adm-radio.adm-radio-checked .adm-radio-icon){
+    background-color: transparent;
+    border-color: #fff;
+}
