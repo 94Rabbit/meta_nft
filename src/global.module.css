@@ -41,3 +41,12 @@
     background-color: transparent;
     border-color: #fff;
 }
+:global(.adm-tabs-tab){
+    color: #fff;
+}
+:global(.adm-tabs-tab .adm-tabs-tab-active){
+    color: #fff;
+}
+:global(.adm-tabs){
+    --active-line-color: #fff;
+}

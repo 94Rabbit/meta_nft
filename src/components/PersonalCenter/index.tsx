@@ -4,7 +4,6 @@ import styles from './index.module.css';
 import { useNavigate } from 'react-router-dom'
 import {
     RightOutline,
-    // EditSOutline,
     CloseOutline,
     UserOutline
   } from 'antd-mobile-icons'
@@ -18,6 +17,7 @@ import share from '../../assets/share.png';
 import setting from '../../assets/setting.png';
 import collect from '../../assets/collect.png';
 import UserModel from "../../models/User/UserModel";
+import { isConstructorDeclaration } from 'typescript';
 
 
 let url = `https://static.ibox.art/file/oss/test/image/nft-goods/60811c1fdcbd46818c71f11bbe9ccbcd.png`;
@@ -53,7 +53,7 @@ function PersonalCenter() {
                             <Image className={styles.main_img} src={collect} />
                             <span className={styles.main_label}>我的收藏</span>
                         </li>
-                        <li  className={styles.personal_item}>
+                        <li  className={styles.personal_item} onClick={()=>{navigate('/order')}}>
                             <Image className={styles.main_img} src={order} />
                             <span className={styles.main_label}>我的订单</span>
                         </li>

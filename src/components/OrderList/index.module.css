@@ -1,0 +1,11 @@
+.order_page{
+    /* background-color: #fff; */
+    height: 100vh;
+
+}
+.order_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
