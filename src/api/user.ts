@@ -1,18 +1,18 @@
 import axios from 'axios';
 
-
+const API_PREFIX = `http://47.104.77.198:1368/nft`
 const loginAPI = async (data: any)=> {
-    return await axios.post('/api/nft/user/doLogin', {
+    return await axios.post(`${API_PREFIX}/user/doLogin`, {
         ...data
     })
 }
 const getUserInfoAPI = async (data: any)=> {
-    return await axios.get('/api/nft/user/getUserInfoById', {
+    return await axios.get(`${API_PREFIX}/user/getUserInfoById`, {
         ...data
     })
 }
 const getVertifyCodeAPI = async (data: any) => {
-    return await axios.get(`/api/nft/user/getPin?tel=${data}`)
+    return await axios.get(`${API_PREFIX}/user/getPin?tel=${data}`)
 }
 export {
     loginAPI,
