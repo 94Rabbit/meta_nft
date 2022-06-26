@@ -26,6 +26,11 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
+"@axetroy/react-codebox@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/@axetroy/react-codebox/-/react-codebox-0.1.0.tgz#cd80187bb8bbeaceeba80f873820607eadf1101b"
+  integrity sha512-+vSUUnZWAiKSrZWO3J4CtppQ2/Zfx03WYM80hsVP2l89FPTinTw+crc24UL1QNytGaYQLo9d9t9jHpnjLa9tsA==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.0", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.8.3":
   version "7.16.7"
   resolved "https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"

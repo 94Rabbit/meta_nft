@@ -64,6 +64,13 @@
 .login_code{
     color: #fff;
 }
+.ver_code{
+    width: 100%;
+}
+.input_code{
+    width: 100%;
+    border: 1px solid red;
+}
 .login_qrcode{
     width: 283px;
     height: 44px;
@@ -91,4 +98,18 @@
     height: 220px;
     background: #fff;
     margin: auto;
+}
+.overlayContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin-top: -75px;
+    margin-left: -75px;
+    background: white;
+    border-radius: 16px;
 }

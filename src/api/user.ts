@@ -11,7 +11,11 @@ const getUserInfoAPI = async (data: any)=> {
         ...data
     })
 }
+const getVertifyCodeAPI = async (data: any) => {
+    return await axios.get(`/api/nft/user/getPin?tel=${data}`)
+}
 export {
     loginAPI,
-    getUserInfoAPI
+    getUserInfoAPI,
+    getVertifyCodeAPI
 }

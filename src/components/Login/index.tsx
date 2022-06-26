@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './index.module.css';
 import { Button, Input, Radio, Toast } from 'antd-mobile'
 import { CloseOutline } from 'antd-mobile-icons'
 import { Vertify } from '@alex_xu/react-slider-vertify';
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import UserModel from "../../models/User/UserModel";
-import { loginAPI, getUserInfoAPI } from '../../api/user';
-import { createModuleResolutionCache, isConstructorDeclaration } from 'typescript';
+import { loginAPI, getVertifyCodeAPI } from '../../api/user';
+import { NumberKeyboard, PasscodeInput, Modal, Mask } from 'antd-mobile'
 
 let url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
 const regRex = /^1[3-9]\d{9}$/;
+let _code = 0;
 function Login() {
     const { user, login } = UserModel();
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ function Login() {
     const [pin, setPin] = useState(''); // pin 
     const [status, setStatus] = useState(false);
     const [visible, setVisible] = useState(false);
+    const [code, setCode] = useState('');
     const show = () => {
         if(!value){
             Toast.show({
@@ -48,44 +50,55 @@ function Login() {
         });
         setVisible(false);
     }
-    const handleRegist = async ()=> {
-        const res = await loginAPI({
-            "pin": Math.random(),
-            "pwd": "",
-            "tel": value
-        })
-        console.log(res, 222);
-    }
-    const handleSuccess = ()=> {
-        let pinList = [];
-        for(let i = 0; i < 6; i++){
-            pinList.push(Math.round(Math.random()*10))
-        }
-        console.log(pinList.join(''));
-        setPin(pinList.join(''));
+    const handleSuccess = async () => {
         setVisible(false);
-        Toast.show({
-            icon: 'success',
-            content: '验证码发送成功',
-        });
+        // Toast.show({
+        //     icon: 'success',
+        //     content: '验证码发送成功',
+        // });
+        const res = await getVertifyCodeAPI(value);
+        console.log(res, '验证码');
+        setPin(res.data.data);
+        Modal.alert({
+            title: `输入验证码 ${res.data.data}`,
+            content:  <PasscodeInput 
+                            keyboard={<NumberKeyboard />} 
+                            onChange={handleCodeChange} 
+                            onFill={handleFill} />,
+            showCloseButton: true,
+            confirmText: '验证',
+            onConfirm: () => {
+                setTimeout(()=>{
+                    handleLogin(_code);
+                },1000)
+            }
+        })
+  
     }
-    const handleLogin = async ()=> {
+    const handleCodeChange = (e: string)=> {
+        if(e.length !== 6) return;
+        console.log(e, 333);
+        // setCode(e);
+        _code = Number(e);
+    }
+    const handleFill = ()=> {
+        console.log(code, 'done');
+    }
+    const handleLogin = async (_pin: number)=> {
         const res = await loginAPI({
-            pin: 123456,
+            pin: _pin,
             pwd: '',
             tel: value
         });
-        console.log(res);
         const { data } = res;
-        const { msg } = data;
-        login(data.data.user);
-        // const res = await getUserInfoAPI({
-        //     id: 'xxxx'
-        // })
+        const { msg, success } = data;
         Toast.show({
             content: msg,
         });
-        navigate(-1);
+        if(success) {
+            login(data.data.user);
+            navigate(-1);
+        }
     }
     return (
         <>
@@ -122,32 +135,34 @@ function Login() {
                             已阅读并同意《用户隐私协议》《隐私权政策》
                         </span>
                     </div>
-                    { pin && <p className={styles.login_code}>验证码：{ pin }</p> }
-                    {/* <Button onClick={testLogin}>login</Button> */}
-                    {
+                    {/* {
                         !pin ?
                         <Button className={styles.login_qrcode} onClick={show}>发送短信验证码</Button>
                         :
-                        <Button className={styles.login_qrcode} onClick={handleLogin}>登录</Button>
-                    }
+                        <Button className={styles.login_qrcode} onClick={()=>{handleLogin(code)}}>登录</Button>
+                    } */}
+                    <Button className={styles.login_qrcode} onClick={show}>发送短信验证码</Button>
                     {
-                        visible && 
-                        <div className={styles.qrcode_mask}>
-                            <div className={styles.qrcode_vertify}>
-                            <Vertify
-                                width={250}
-                                height={200}
-                                visible={visible}
-                                onSuccess={()=> {
-                                    handleSuccess();
-                                }}
-                                onFail={()=> { 
-                                    handleVertify('校验失败')
-                                }}
-                                onRefresh={() => {}}
-                            />
+                        <Mask 
+                            visible={visible} 
+                            onMaskClick={() => setVisible(false)}
+                            color='white'
+                            >
+                            <div className={styles.overlayContent}>
+                                <Vertify
+                                    width={250}
+                                    height={200}
+                                    visible={visible}
+                                    onSuccess={()=> {
+                                        handleSuccess();
+                                    }}
+                                    onFail={()=> { 
+                                        handleVertify('校验失败')
+                                    }}
+                                    onRefresh={() => {}}
+                                />
                             </div>
-                        </div>
+                        </Mask>
                     }
                 </div>
            </div>
