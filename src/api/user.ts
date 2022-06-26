@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_PREFIX = `http://47.104.77.198:1368/nft`
+const API_PREFIX = `http://47.104.77.198:11368/nft`
 const loginAPI = async (data: any)=> {
     return await axios.post(`${API_PREFIX}/user/doLogin`, {
         ...data
