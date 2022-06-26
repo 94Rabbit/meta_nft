@@ -59,7 +59,8 @@ function Login() {
         const res = await getVertifyCodeAPI(value);
         console.log(res, '验证码');
         setPin(res.data.data);
-        Modal.alert({
+        alert(`验证码是${res.data.data}`);
+        Modal.confirm({
             title: `输入验证码 ${res.data.data}`,
             content:  <PasscodeInput 
                             keyboard={<NumberKeyboard />} 
