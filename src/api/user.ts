@@ -14,8 +14,12 @@ const getUserInfoAPI = async (data: any)=> {
 const getVertifyCodeAPI = async (data: any) => {
     return await axios.get(`${API_PREFIX}/user/getPin?tel=${data}`)
 }
+const testAPI = async () => {
+    return await axios.get(`https://nft-backend-lime.vercel.app/`)
+}
 export {
     loginAPI,
     getUserInfoAPI,
-    getVertifyCodeAPI
+    getVertifyCodeAPI,
+    testAPI
 }

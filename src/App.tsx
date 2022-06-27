@@ -7,6 +7,7 @@ import PersonalCenter from './components/PersonalCenter';
 import NftDetail from './components/NftDetail';
 import Login from './components/Login';
 import OrderList from './components/OrderList';
+import Test from './components/Test';
 import BlindGift from './components/BlindGift';
 import { SafeArea } from 'antd-mobile'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/blindgift' element={<BlindGift />}></Route>
           <Route path='/order' element={<OrderList />}></Route>
+          <Route path='/test' element={<Test />}></Route>
         </Routes>
       </div>
       <div className={styles.footer}>
