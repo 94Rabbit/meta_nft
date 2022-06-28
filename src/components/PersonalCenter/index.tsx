@@ -40,13 +40,15 @@ function PersonalCenter() {
                                   }}/>
                                 : <UserOutline color={`#4C3929`} fontSize={24}/>
                         }
-                        <ImageViewer
-                            image={user.avatar}
-                            visible={visible}
-                            onClose={() => {
-                              setVisible(false)
-                            }}
-                        />
+                        {
+                           user && <ImageViewer
+                                image={user.avatar}
+                                visible={visible}
+                                onClose={() => {
+                                setVisible(false)
+                                }}
+                            />
+                        }
                     </div>
                     <div className={styles.personal_info}>
                         <p className={styles.personal_name} onClick={()=> { if(!user){goLoginForm()}}}> { user ? user.name : '未登录' } </p>
