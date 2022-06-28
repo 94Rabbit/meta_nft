@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, Button } from 'antd-mobile'
+import { Image, Button, ImageViewer } from 'antd-mobile'
 import styles from './index.module.css';
 import { useNavigate } from 'react-router-dom'
 import {
@@ -17,7 +17,6 @@ import share from '../../assets/share.png';
 import setting from '../../assets/setting.png';
 import collect from '../../assets/collect.png';
 import UserModel from "../../models/User/UserModel";
-import { isConstructorDeclaration } from 'typescript';
 
 
 let url = `https://static.ibox.art/file/oss/test/image/nft-goods/60811c1fdcbd46818c71f11bbe9ccbcd.png`;
@@ -25,6 +24,7 @@ function PersonalCenter() {
     const { user } = UserModel();
     const [ show, setShow ] = useState(true);
     const navigate = useNavigate();
+    const [visible, setVisible] = useState(false)
     const goLoginForm = ()=> {
         navigate('/login');
     }
@@ -35,13 +35,22 @@ function PersonalCenter() {
                     <div className={styles.personal_avatar}>
                         {
                             user  
-                                ? <Image src={url} className={styles.personal_pic}/>
+                                ? <Image src={user.avatar} className={styles.personal_pic} onClick={() => {
+                                    setVisible(true)
+                                  }}/>
                                 : <UserOutline color={`#4C3929`} fontSize={24}/>
                         }
+                        <ImageViewer
+                            image={user.avatar}
+                            visible={visible}
+                            onClose={() => {
+                              setVisible(false)
+                            }}
+                        />
                     </div>
                     <div className={styles.personal_info}>
                         <p className={styles.personal_name} onClick={()=> { if(!user){goLoginForm()}}}> { user ? user.name : '未登录' } </p>
-                        <p className={styles.personal_phone}>{user ? user.tel : '登录后可以查看你的数字藏品'}</p>
+                        <p className={styles.personal_phone}>{user ? user.wallet : '登录后可以查看你的数字藏品'}</p>
                     </div>
                     {
                         user && <Button className={styles.personal_profile}>个人主页</Button>

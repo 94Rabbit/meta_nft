@@ -5,7 +5,7 @@ import { CloseOutline } from 'antd-mobile-icons'
 import { Vertify } from '@alex_xu/react-slider-vertify';
 import { useNavigate } from 'react-router-dom'
 import UserModel from "../../models/User/UserModel";
-import { loginAPI, getVertifyCodeAPI } from '../../api/user';
+import { loginAPI, getVerificationCodeAPI } from '../../api/user';
 import { NumberKeyboard, PasscodeInput, Modal, Mask } from 'antd-mobile'
 
 let url = `https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309__340.png`;
@@ -56,12 +56,12 @@ function Login() {
         //     icon: 'success',
         //     content: '验证码发送成功',
         // });
-        const res = await getVertifyCodeAPI(value);
+        const res = await getVerificationCodeAPI(value);
         console.log(res, '验证码');
-        setPin(res.data.data);
-        alert(`验证码是${res.data.data}`);
+        setPin(res.data.code);
+        alert(`验证码是${res.data.code}`);
         Modal.confirm({
-            title: `输入验证码 ${res.data.data}`,
+            title: `输入验证码 ${res.data.code}`,
             content:  <PasscodeInput 
                             keyboard={<NumberKeyboard />} 
                             onChange={handleCodeChange} 
@@ -87,17 +87,17 @@ function Login() {
     }
     const handleLogin = async (_pin: number)=> {
         const res = await loginAPI({
-            pin: _pin,
-            pwd: '',
-            tel: value
+            code: _pin,
+            phone: Number(value)
         });
         const { data } = res;
-        const { msg, success } = data;
+        console.log(data, 222);
+        const { msg, success, userInfo = {} } = data;
         Toast.show({
             content: msg,
         });
         if(success) {
-            login(data.data.user);
+            login(userInfo);
             navigate(-1);
         }
     }
